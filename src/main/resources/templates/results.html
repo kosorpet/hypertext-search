@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Hypertext Search</title>
+        <link th:href="@{styles.css}" rel="stylesheet" />
+<!--        <link href="../static/styles.css" rel="stylesheet"/>-->
+    </head>
+    <body>
+        <header>
+            <p class="left">BI-VWM</p>
+            <p><a href="/">go back</a></p>
+        </header>
+        <main class="results">
+            <div class="top-info">
+                <h1 class="logo">Hypertext Search</h1>
+                <form th:action="@{/search}" method="post">
+                    <input type="text" th:value="${sourceText}" placeholder="Enter searched pattern..." name="sourceText" class="text"/>
+                </form>
+            </div>
+            <div class="results-content">
+                <h2>Results with page rank</h2>
+                <tr th:each="r:${resultSet}">
+                    <td class="single-result">
+                        <a class="result-link" th:href="@{${r.site.getUrl()}}">
+                            <text th:text="${r.site.getUrl()}"/>
+                        </a><br/>
+                        <a class="result-name" th:href="@{${r.site.getUrl()}}">
+                            <text th:text="${r.site.getName()}"/>
+                        </a><br/>
+                        <text class="score-info">      Total score:  </text><text th:text="${#numbers.formatDecimal(r.getFinalScore(), 1, 4)}"/><br/>
+                        <text class="score-info">      Text score:  </text><text th:text="${#numbers.formatDecimal(r.getScore(), 1, 4)}"/><br/>
+                        <text class="score-info">      Pagerank:  </text><text th:text="${#numbers.formatDecimal(r.getPageRank(), 1, 4)}"/><br/>
+                        <a class="result-view" th:text="${r.site.getView(300)}"/><br/>
+                    </td>
+                </tr>
+            </div>
+            <div class="results-content">
+                <h2>Results wihtout page rank - only content based search</h2>
+                <tr th:each="r2:${resultSetWithoutPageRank}">
+                    <td class="single-result">
+                        <a class="result-link" th:href="@{${r2.site.getUrl}}">
+                            <text th:text="${r2.site.getUrl()}"/>
+                        </a><br/>
+                        <a class="result-name" th:href="@{${r2.site.getUrl()}}">
+                            <text th:text="${r2.site.getName()}"/>
+                        </a><br/>
+                        <text class="score-info">      Total score:  </text><text th:text="${#numbers.formatDecimal(r2.getFinalScore(), 1, 4)}"/><br/>
+                        <text class="score-info">      Text Score:  </text><text th:text="${#numbers.formatDecimal(r2.getScore(), 1, 4)}"/><br/>
+                        <text class="score-info">      Pagerank:  </text>NOT CALCULATED<br/>
+                        <a class="result-view" th:text="${r2.site.getView(300)}"/><br/>
+                    </td>
+                </tr>
+            </div>
+        </main>
+    </body>
+</html>
+
+

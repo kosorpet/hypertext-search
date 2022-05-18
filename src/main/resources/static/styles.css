@@ -1,0 +1,103 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 110%;
+}
+
+main.index{
+    margin: 5% auto auto;
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+h1{
+    font-size: 4rem;
+    margin-bottom: 5rem;
+}
+
+.a{
+  display: block;
+}
+
+.results{
+    font-size: 80%;
+    margin-bottom: 5rem;
+    margin-left: 10rem;
+}
+
+.single-result{
+    /*margin-bottom: 0.5rem;*/
+    margin-bottom: 5rem;
+}
+
+.result-link{
+    font-size: 90%;
+    font-weight: lighter;
+    text-decoration: none;
+    color: black;
+}
+
+.result-name{
+    font-size: 130%;
+    font-weight: bold;
+    color: darkblue;
+    text-decoration: none;
+    margin-top: 3pt;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+.result-name:visited{
+    color: purple;
+}
+
+.result-name:hover{
+    text-decoration: underline;
+}
+
+.result-view{
+    display: inline-block;
+    margin-bottom: 1.3rem;
+}
+
+h1.logo{
+    margin-left: 1rem;
+    font-size: 2rem;
+}
+
+.top-info *{
+    display: inline-block;
+}
+
+input.text
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 8pt;
+}
+
+.top-info form{
+    margin-left: 2rem;
+}
+
+.info{
+    margin-top: 2rem;
+}
+
+.results-content{
+    display: inline-block;
+    width: 40%;
+    margin-left: 15pt;
+}
+
+.score-info{
+    margin-left: 1rem;
+    font-size: smaller;
+}
+

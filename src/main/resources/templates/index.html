@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Hypertext Search</title>
+        <link th:href="@{styles.css}" rel="stylesheet" />
+<!--            <link href="../static/styles.css" rel="stylesheet" />-->
+    </head>
+    <body>
+        <header>
+            <a class="left" href="https://moodle-vyuka.cvut.cz/course/view.php?id=6918">BI-VWM</a>
+        </header>
+        <main class="index">
+            <h1>Hypertext Search</h1>
+            <box id="search">
+                <form th:action="@{/search}" method="post">
+                    <input type="text" th:value="${sourceText}" name="sourceText" placeholder="Enter searched pattern..." class="text"/>
+                    <input type="submit"/>
+                </form>
+            </box>
+            <p class="info" >Searching on <a href="https://www.wikipedia.org/">wikipedia</a></p>
+        </main>
+<!--        <footer>-->
+<!--            <p>ČVUT - FIT</p>-->
+<!--            <p>BI-VWM.21</p>-->
+<!--            <p>2022</p>-->
+<!--            <p>Made by: <strong>Peter Kosorín</strong> and <strong>Šimon Melkes</strong></p>-->
+<!--            <p>melkesim@cvut.cz</p>-->
+<!--        </footer>-->
+    </body>
+</html>
+
