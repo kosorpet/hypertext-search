@@ -4,7 +4,7 @@ This project implements a simple search engine demonstrating the algorithms used
 
 ## To run:
 1.
-``bash
+```bash
 java -jar hypertextSearch.jar
 ```
 2. open localhost:8080 in a browser
