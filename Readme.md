@@ -1,6 +1,6 @@
 # Hypertext search 
 
-This project implements a simple search engine demonstrating the algorithms used in ranking Wikipedia web pages according to PageRank score.
+This project implements a simple search engine demonstrating the algorithms used in ranking Wikipedia web pages according to PageRank score. For details about the project see [Documentation.pdf](https://github.com/kosorpet/hypertext-search/blob/master/Doumentation.pdf)
 
 ## To run:
 1.
